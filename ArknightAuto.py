@@ -47,6 +47,7 @@ while(True):
         if(x>0):
             print("Start Clicked")
         pyautogui.leftClick(pt)
+        pyautogui.moveTo(x,y)
         cv2.rectangle(frame, pt, (pt[0] + w_start, pt[1] + h_start), (0,0,225), 2)
         time.sleep(2)
         break
@@ -58,6 +59,7 @@ while(True):
         if(x>0):
             print("Mission Start Clicked")
         pyautogui.leftClick(pt)
+        pyautogui.moveTo(x,y)
         cv2.rectangle(frame, pt, (pt[0] + w_mission_start, pt[1] + h_mission_start), (0,0,225), 2)
         time.sleep(2)
         break
@@ -69,12 +71,13 @@ while(True):
         if(x>0):
             print("Mission Ended, Restarting Loop")
         pyautogui.leftClick(pt)
+        pyautogui.moveTo(x,y)
         cv2.rectangle(frame, pt, (pt[0] + w_trust, pt[1] + h_trust), (0,0,225), 2)
         time.sleep(2)
         break
 
     # Display the resulting frame
-    cv2.imshow('frame',frame)
+    #cv2.imshow('frame',frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
